@@ -113,9 +113,10 @@
           <article>
             <h3>Distributed Systems &amp; Data</h3>
             <p>
-              Java, Python, microservices, Kafka, gRPC, BigQuery, GCS,
-              PostgreSQL, Apache Druid, Spark, Delta Lake, Kappa architecture,
-              ETL/OLAP
+              Java, Python, microservices, Kafka, Spark Structured Streaming,
+              Hive, ORC/Parquet with Snappy/Zstd compression, gRPC, BigQuery,
+              GCS, PostgreSQL, Apache Druid, Delta Lake, Kappa architecture,
+              ETL/OLAP, large-scale data sharing
             </p>
           </article>
           <article>
@@ -216,9 +217,29 @@
                 coaching engineers on system design, operability, and ownership.
               </li>
               <li>
-                Led a highly resilient data-sharing and purge platform for
-                Walmart.com under CCPA guidelines, serving millions of requests
-                through Kafka-based messaging and scalable consumer services.
+                Built an <strong>order analytics platform</strong> for Walmart.com
+                ML teams using Apache Spark Structured Streaming — continuously
+                reading order and commerce event streams, applying windowed
+                aggregations and stateful transforms with checkpointing and
+                exactly-once semantics, and landing curated feature-ready
+                datasets so data scientists could train and iterate on predictive
+                models (demand, conversion, and order-behavior signals) without
+                reinventing ingestion pipelines.
+              </li>
+              <li>
+                Designed the storage and serving layer for large-scale analytics
+                and data sharing: Hive metastore tables over columnar ORC/Parquet
+                with Snappy and Zstandard compression to cut storage cost and
+                accelerate scan-heavy ML and BI workloads; partitioned, governed
+                datasets that multiple teams could consume safely at scale.
+              </li>
+              <li>
+                Led a highly resilient <strong>data-sharing and purge platform</strong>
+                for Walmart.com under CCPA guidelines — enabling secure,
+                high-throughput sharing of customer and order-related datasets
+                across analytics and ML consumers while supporting compliant
+                purge and retention workflows through Kafka-based messaging and
+                scalable consumer services serving millions of requests.
               </li>
               <li>
                 Directed backend and data engineering for Jira PM Assist,
@@ -343,7 +364,9 @@
       </section>
 
       <section id="projects" class="section reveal">
-        <h2>Featured Project — Privacy Guard</h2>
+        <h2>Featured Projects</h2>
+
+        <h3 class="project-title">Privacy Guard</h3>
         <p class="project-lede">
           Enterprise hybrid PII redaction service powering secure content
           pipelines and GenAI adoption across Walmart.
@@ -376,6 +399,45 @@
               application, serving <strong>2M+ requests per day</strong> in
               production and widely used across Walmart for PII redaction before
               content leaves secure boundaries or enters GenAI workflows.
+            </p>
+          </article>
+        </div>
+
+        <h3 class="project-title project-title-spaced">
+          Order Analytics Platform for ML
+        </h3>
+        <p class="project-lede">
+          Streaming order analytics pipeline that feeds Walmart ML teams with
+          reliable, feature-ready data for predictive modeling.
+        </p>
+        <div class="impact-list">
+          <article>
+            <h3>Spark Structured Streaming</h3>
+            <p>
+              Continuous micro-batch ingestion of order and commerce events with
+              windowed aggregations, stateful transforms, watermarks, and
+              checkpointing for fault-tolerant, exactly-once processing —
+              delivering near-real-time analytics tables instead of brittle
+              overnight batch jobs.
+            </p>
+          </article>
+          <article>
+            <h3>Compressed Hive data lake</h3>
+            <p>
+              Persisted curated datasets as Hive-managed columnar tables
+              (ORC/Parquet) using Snappy and Zstandard compression to reduce
+              storage footprint and speed up predicate pushdown and columnar
+              scans for ML feature extraction and BI.
+            </p>
+          </article>
+          <article>
+            <h3>Scaled data sharing</h3>
+            <p>
+              Published governed, partitioned datasets that multiple analytics
+              and ML consumers could share at scale — with clear contracts for
+              schema, retention, and CCPA-aligned purge — so predictive models
+              for demand and order behavior could be built on consistent,
+              production-grade sources.
             </p>
           </article>
         </div>
@@ -420,9 +482,10 @@
           <article>
             <h3>Data Platforms</h3>
             <p>
-              Real-time and batch architectures across Kafka, BigQuery, GCS,
-              PostgreSQL, Apache Druid, OpenSearch, Spark, and Delta Lake —
-              emphasizing low-latency access, governance, and extensibility.
+              Spark Structured Streaming for continuous order analytics;
+              Hive-managed ORC/Parquet lakes with Snappy/Zstd compression;
+              governed, high-scale data sharing for ML and analytics consumers
+              alongside Kafka, BigQuery, GCS, PostgreSQL, Druid, and Delta Lake.
             </p>
           </article>
           <article>
