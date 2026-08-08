@@ -208,6 +208,11 @@ a:hover {
   color: var(--ink-soft);
 }
 
+.project-lede {
+  margin: -0.35rem 0 1.25rem !important;
+  font-size: 1.05rem;
+}
+
 .metrics {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));

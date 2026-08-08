@@ -24,6 +24,7 @@
         <p class="brand">Diptiranjan Dash</p>
         <nav class="header-nav" aria-label="Page">
           <a href="#experience">Experience</a>
+          <a href="#projects">Projects</a>
           <a href="#expertise">Expertise</a>
           <a href="#impact">Impact</a>
           <a class="print-btn" href="javascript:window.print()">Print / PDF</a>
@@ -61,12 +62,12 @@
           <span class="metric-label">events / second ingestion</span>
         </div>
         <div class="metric reveal">
-          <span class="metric-value">1M+</span>
-          <span class="metric-label">MCP requests / day</span>
+          <span class="metric-value">2M+</span>
+          <span class="metric-label">PII redaction requests / day</span>
         </div>
         <div class="metric reveal">
-          <span class="metric-value">80K+</span>
-          <span class="metric-label">enterprise users served</span>
+          <span class="metric-value">1M+</span>
+          <span class="metric-label">MCP requests / day</span>
         </div>
         <div class="metric reveal">
           <span class="metric-value">10+</span>
@@ -98,7 +99,7 @@
             <p>
               Internal developer platforms, developer experience and velocity,
               Agentic AI, MCP, GenAI/LLM workflow integration, RAG, LangGraph,
-              LangChain, production agents
+              LangChain, production agents, hybrid PII redaction for governed GenAI
             </p>
           </article>
           <article>
@@ -226,10 +227,19 @@
                 work-management workflows.
               </li>
               <li>
-                Built Privacy Guard, an ML- and LLM-assisted PII redaction
-                platform combining Presidio, spaCy, and regex detection to
-                support secure enterprise content processing and governed GenAI
-                adoption.
+                Built and scaled <strong>Privacy Guard</strong>, a multi-tenant
+                hybrid PII redaction platform widely adopted across Walmart —
+                combining deterministic regex recognizers with spaCy NER via a
+                customized Microsoft Presidio stack, plus a custom redact-entity
+                selector tuned to Walmart’s company context (associates,
+                customers, orders, and internal identifiers). Serves
+                <strong>2M+ requests per day</strong> with layered detection:
+                high-precision pattern matching for structured PII, model-based
+                NER for unstructured entities, confidence thresholds and
+                allow-lists to control false positives, and tenant-isolated
+                policies so teams can choose what to redact without
+                over-masking business-critical fields — enabling governed GenAI
+                and secure enterprise content processing at scale.
               </li>
               <li>
                 Developed AI-assisted engineering tools, including a CI/CD
@@ -332,6 +342,45 @@
         </div>
       </section>
 
+      <section id="projects" class="section reveal">
+        <h2>Featured Project — Privacy Guard</h2>
+        <p class="project-lede">
+          Enterprise hybrid PII redaction service powering secure content
+          pipelines and GenAI adoption across Walmart.
+        </p>
+        <div class="impact-list">
+          <article>
+            <h3>Hybrid detection (model + regex)</h3>
+            <p>
+              Layered pipeline: compiled regex and checksum-aware recognizers for
+              structured PII (emails, phones, IDs, payment patterns), then spaCy
+              NER through a customized Presidio analyzer for unstructured
+              entities (names, orgs, locations). Confidence thresholds,
+              allow-lists, and company-context rules reduce false positives on
+              SKUs, internal codes, and operational text.
+            </p>
+          </article>
+          <article>
+            <h3>Custom redact-entity selector</h3>
+            <p>
+              Built a configurable entity selector so tenants choose which
+              entity types to redact per use case — balancing privacy with
+              downstream utility for search, analytics, and LLM grounding —
+              rather than applying a one-size-fits-all mask.
+            </p>
+          </article>
+          <article>
+            <h3>Multi-tenant scale</h3>
+            <p>
+              Multi-tenant service with policy isolation per consuming
+              application, serving <strong>2M+ requests per day</strong> in
+              production and widely used across Walmart for PII redaction before
+              content leaves secure boundaries or enters GenAI workflows.
+            </p>
+          </article>
+        </div>
+      </section>
+
       <section id="impact" class="section reveal">
         <h2>Architecture, AI &amp; Leadership Impact</h2>
         <div class="impact-list">
@@ -341,6 +390,15 @@
               Production agents, MCP services, AI-assisted CI/CD troubleshooting,
               story estimation, enterprise search, and reusable LLM integration
               patterns for internal developer workflows.
+            </p>
+          </article>
+          <article>
+            <h3>Privacy Guard &amp; Governed GenAI</h3>
+            <p>
+              Hybrid Presidio + spaCy + regex redaction with Walmart-context
+              recognizers and a custom entity selector; multi-tenant platform at
+              2M+ daily requests enabling safe enterprise content processing and
+              GenAI adoption.
             </p>
           </article>
           <article>
