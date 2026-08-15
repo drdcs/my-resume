@@ -1,6 +1,6 @@
 # Diptiranjan Dash — Resume
 
-Principal Software Engineer resume site, hosted on GitHub Pages.
+Principal Software Engineer resume site, hosted on GitHub Pages...
 
 ## Local preview
 
